@@ -4,6 +4,9 @@ from urllib.parse import urljoin  # 상대 URL을 절대 URL로 변환하기 위
 import pickle
 import os
 
+# from vars import *
+
+
 def main():
     # 1. 대상 페이지 URL 및 요청 헤더 설정
     base_url = "https://www.etcseoul.com"  # 기본 도메인
@@ -62,7 +65,7 @@ def main():
     # 5. 결과를 pickle 파일로 저장
     current_dir = os.path.dirname(os.path.abspath(__file__))
     pickle_file_path = os.path.join(current_dir, 'brand_urls.pickle')
-    
+
     try:
         with open(pickle_file_path, 'wb') as f:
             pickle.dump(brand_dict, f)

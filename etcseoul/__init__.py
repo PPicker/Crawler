@@ -2,7 +2,10 @@ import requests
 from bs4 import BeautifulSoup
 import pickle
 import os
-from utils import get_brand_description
+from utils import (
+    get_brand_description, 
+    get_name_and_urls,
+)
 def main():
     # 현재 파일의 디렉토리를 기준으로 pickle 파일 경로 생성
     
@@ -23,11 +26,14 @@ def main():
             print(f"{brand} 페이지 요청 중 오류 발생: {e}")
             continue
         
-        description = get_brand_description(response)
-        if description:
-            print(f"{brand}에 대한 설명:\n{description}")
-        else:
-            print(f"{brand} 페이지에서 브랜드 설명 요소를 찾지 못했습니다.")
+
+        #get brand description
+        description = get_brand_description(response,brand)
+
+        get_name_and_urls(response)
+        break
+
+
 
 
 if __name__ == '__main__':
