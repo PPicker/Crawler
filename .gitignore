@@ -1,5 +1,14 @@
 # __pycache__ 폴더 무시
 __pycache__/
 
+
+
 # .pickle 확장자를 가진 모든 파일 무시
 *.pickle
+
+
+#csv 확장자 무시
+*.csv
+
+#image dir 무시
+images/
