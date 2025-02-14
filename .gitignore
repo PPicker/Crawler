@@ -9,6 +9,7 @@ __pycache__/
 
 #csv 확장자 무시
 *.csv
+*.txt
 
 #image dir 무시
 images/

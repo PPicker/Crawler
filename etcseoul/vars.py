@@ -7,6 +7,9 @@ global variable을 여기에서 저장 및 관리
 import os 
 import pickle
 
+# target_brands = ['']
+
+
 headers = {
         "User-Agent": ("Mozilla/5.0 (Windows NT 10.0; Win64; x64) "
                        "AppleWebKit/537.36 (KHTML, like Gecko) "
