@@ -17,9 +17,11 @@ class PaddleOCR_wrapper:
         if self.ocr_result:
             for r in result[0]:
                 ocr_text.append(r[1][0])
+            
         else:
             ocr_text = "No text detected."
-
+        return ocr_text
+    
     def check_txt_exists(self, img_path:str):
         '''
         no batch inference supported
@@ -33,10 +35,4 @@ class PaddleOCR_wrapper:
 if __name__ == '__main__':
     ocr = PaddleOCR_wrapper()
     print(ocr.check_txt_exists('KakaoTalk_Photo_2025-02-10-15-16-11.png'))
-    
-    import cairosvg
-    import io
-    # SVG 파일을 메모리 내 PNG 바이트 데이터로 변환
-    png_data = io.BytesIO()
-    cairosvg.svg2png(url="input.svg", write_to=png_data)
-    print(ocr.check_txt_exists(png_data))
+    print(ocr.run_ocr('6.png'))

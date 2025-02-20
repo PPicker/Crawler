@@ -12,6 +12,10 @@ __pycache__/
 *.txt
 *.png
 *.jpeg
-
+*.svg
 #image dir 무시
 images/
+
+
+#test 파일 무시
+test*.py
