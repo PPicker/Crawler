@@ -67,6 +67,5 @@ def crawling(brands: List[str] = None) -> None:
 
 
 if __name__ == '__main__':
-    #target_brand_list = ['Art if acts']
-    target_brand_list = None
+    target_brand_list = None #specify 하고싶은 경우 그렇게 진행
     crawling(target_brand_list)
