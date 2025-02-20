@@ -41,7 +41,7 @@ def crawling(brands: List[str] = None) -> None:
         brand_data_list.append([name,url,description]) #list에 추가
         # item_data_list += get_item_data(response,brand)
 
-        get_brand_products(response,brand)
+        item_data_list=get_brand_products(response,brand)
 
 
     # # # CSV 파일에 데이터 저장 
@@ -51,11 +51,10 @@ def crawling(brands: List[str] = None) -> None:
     # # 그런데 지금은 그정도로 많지 않음 그러니 IO bound를 낮추는게 더 효과적이라 판단
     # # '''
 
-    # with open(item_csv_path, "w", newline="", encoding="utf-8") as file:
-    #     writer = csv.writer(file)
-    #     # product_info_list.append([product_name,brand,product_href,product_price,product_detail,product_image_paths])
-    #     writer.writerow(["Name", "Brand", "Link","Price","Description",'Image_paths'])  # 헤더 작성
-    #     writer.writerows(item_data_list)  # 데이터 작성
+    with open(item_csv_path, "w", newline="", encoding="utf-8") as file:
+        writer = csv.writer(file)
+        writer.writerow(["Name", "Brand", "Link","Price","Description",'Image_paths'])  # 헤더 작성
+        writer.writerows(item_data_list)  # 데이터 작성
 
     with open(brand_csv_path, "w", newline="", encoding="utf-8") as file:
         writer = csv.writer(file)
@@ -68,6 +67,5 @@ def crawling(brands: List[str] = None) -> None:
 
 
 if __name__ == '__main__':
-    #target_brand_list = ['Art if acts']
-    target_brand_list = None
+    target_brand_list = None #specify 하고싶은 경우 그렇게 진행
     crawling(target_brand_list)

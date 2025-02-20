@@ -7,9 +7,15 @@ __pycache__/
 *.pickle
 
 
-#csv 확장자 무시
+#기타 파일 무시
 *.csv
 *.txt
-
+*.png
+*.jpeg
+*.svg
 #image dir 무시
 images/
+
+
+#test 파일 무시
+test*.py
