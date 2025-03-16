@@ -61,11 +61,6 @@ def crawling(brands: List[str] = None) -> None:
         writer.writerow(["Brand", "URL", "Description"])  # 헤더 작성
         writer.writerows(brand_data_list)  # 데이터 작성
 
-
-
-
-
-
 if __name__ == '__main__':
     target_brand_list = None #specify 하고싶은 경우 그렇게 진행
     crawling(target_brand_list)

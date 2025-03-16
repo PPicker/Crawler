@@ -99,8 +99,11 @@ def get_brand_products(response,brand):
     descriptions =get_description_from_url(all_products)
     # exit()
     for product,description in zip(all_products,descriptions):
+        #print(product['goodsName'])
         
         product_name = product['goodsName'].replace(' ','_') #공백은 _로 변환
+        # print(product_name)
+        # exit()
         link = product['goodsLinkUrl']
         thumbnail_image = product['thumbnail']
         price = product['price']
@@ -108,7 +111,7 @@ def get_brand_products(response,brand):
         image_path = os.path.join(brand_image_dir,image_path)
         download_image(thumbnail_image,image_path)
         # relative_image_path = os.path.relpath(image_path, start=os.getcwd())
-        products_data.append([product_name,brand,link,price,description,os.path.relpath(image_path, start=os.getcwd())])
+        products_data.append([product_name,brand,link,price,description,os.path.relpath(image_path, start=os.path.dirname(os.path.abspath(__file__)))])
 
     return products_data
 
